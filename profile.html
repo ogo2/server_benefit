@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/assets.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <title>Главная</title>
 </head>
 <body>
@@ -27,9 +28,13 @@
             </ul>
         </div>
         <div class="inst">
-            <a href="404.html"><img src="img/корзина.png"></a>
 
+
+            <a href="404.html"><img src="img/корзина.png"></a>
             <a href="reqister.html"><img src="img/пользователь.png"></a>
+            <div class="num_tov">32</div>
+
+
         </div>
     </div>
 </header>
@@ -43,15 +48,15 @@
                 <h1 class="h1_profile">Соболева Ксения</h1>
 
                 <ul class="ul_profile">
-                    <li class="li_profile"><button class="but_profile">Корзина</button></li>
-                    <li class="li_profile"><button class="but_profile">Мой адрес</button></li>
-                    <li class="li_profile"><button class="but_profile">Способы оплаты</button></li>
-                    <li class="li_profile"><button class="but_profile">Мои заказы</button></li>
+                    <li class="li_profile"><button value="korsin" class="but_profile">Корзина</button></li>
+                    <li class="li_profile"><button value="street" class="but_profile">Мой адрес</button></li>
+                    <li class="li_profile"><button value="buy" class="but_profile">Способы оплаты</button></li>
+                    <li class="li_profile"><button value="my_tovar" class="but_profile">Мои заказы</button></li>
                 </ul>
                 <div class="block_profile_right">
-                    <h1 class="h1_type_profile">Корзина</h1>
+                    <h1 style="display: none" class="h1_type_profile"></h1>
 
-                    <div class="shop_bracelets_block">
+                    <div style="display: none" class="shop_bracelets_block">
                         <div class="bracelets_block">
                             <img src="img/распродажа.jpg">
                             <div class="name_bracelets">
@@ -85,7 +90,74 @@
                             <button>Удалить из корзины</button>
                         </div>
                     </div>
-                    <button class="buy_tovar">Оформить заказ</button>
+
+                    <form style="display: none" action="php_new/sign_in_user.php" class="adress_form" method="post">
+                        <ul>
+                            <li>
+                                <label for="name"><p>Город</p></label>
+                                <input class="form_inp" aria-invalid="false" required  type="text" id="name" name="login" placeholder="">
+                            </li>
+                            <li>
+                                <label for="name"><p>Улица</p></label>
+                                <input class="form_inp" aria-invalid="false" required  type="text" id="name" name="login" placeholder="">
+                            </li>
+                            <li>
+                                <label for="password"><p>Регион</p></label>
+                                <input class="form_inp" aria-invalid="false" required  type="password" id="password" name="password" placeholder="">
+                            </li>
+                            <li>
+                                <label for="password"><p>Почтовый индекс</p></label>
+                                <input class="form_inp" aria-invalid="false" required  type="password" id="password" name="password" placeholder="">
+                            </li>
+                            <button class="butttt" type="submit">
+                                <a href=""><p>Добавить адрес</p></a>
+                            </button>
+                            <p>
+                                <?php
+                                echo $_SESSION['test'];
+                                unset($_SESSION['test'])
+                                ?>
+
+                            </p>
+
+
+                        </ul>
+
+                    </form>
+                    <form style="display: none" action="php_new/sign_in_user.php" class="card_form" method="post">
+                        <ul>
+                            <li>
+                                <label for="name"><p>Номер карты</p></label>
+                                <input class="form_inp" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" inputmode="numeric" aria-invalid="false" required  type="text" id="name" name="login" placeholder="1111 1111 1111 1111">
+                            </li>
+                            <li>
+                                <label for="name"><p>Срок действия</p></label>
+                                <input class="form_inp" pattern="[0-9]{2}\/[0-9]{2}" inputmode="numeric" aria-invalid="false" required  type="text" id="name" name="login" placeholder="12/22">
+                            </li>
+                            <li>
+                                <label for="name"><p>CVC</p></label>
+                                <input class="form_inp" pattern="[0-9]{3}" inputmode="numeric" aria-invalid="false" required  type="text" id="name" name="login" placeholder="111">
+                            </li>
+                            <li>
+                                <label for="name"><p>Имя</p></label>
+                                <input class="form_inp"  inputmode="numeric" aria-invalid="false" required  type="text" id="name" name="login" placeholder="IVANOV IVAN">
+                            </li>
+                            <button class="butttt" type="submit">
+                                <a href=""><p>Добавить карту</p></a>
+                            </button>
+                            <p>
+                                <?php
+                                echo $_SESSION['test'];
+                                unset($_SESSION['test'])
+                                ?>
+
+                            </p>
+
+
+                        </ul>
+
+                    </form>
+                    <button style="display: none" class="buy_tovar">Оформить заказ</button>
 
                 </div>
             </div>
@@ -162,5 +234,6 @@
         </div>
     </div>
 </div>
+<script src="style/profile.js"></script>
 </body>
 </html>

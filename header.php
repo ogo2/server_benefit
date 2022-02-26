@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/assets.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
     <title>Benefit Epoxy Resin</title>
 </head>
 <body>
@@ -30,10 +32,11 @@
             <?php
                 if ($_SESSION['user']){
             ?>
-            <a href="/profile.php"><img src="img/корзина.png"></a>
             <a href="/php_new/log_out.php"><img src="img/img_205956.png"> </a>
             <a href="/profile.php"><img src="img/пользователь.png"></a>
-            <?php
+                    <div class="num_tov">32</div>
+
+                    <?php
                 }else{
             ?>
                     <a class="inst_sign" href="/register.php">Войти</a>
