@@ -23,9 +23,7 @@ $product = mysqli_fetch_all($result);
                         <p>$product_name</p>
                     </div>
                     <p>$price$</p>
-                    <form action='php_new/buy.php' method='post'>
-                    <button value='$product_id' name='buy'>В корзину</button>
-                    </form>
+                        <button class='buy_tovar_button' value='$product_id' name='buy'>В корзину</button>
                 </div>";
                 }
                 ?>

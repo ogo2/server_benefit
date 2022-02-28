@@ -50,7 +50,7 @@
                 </div>
                 <div class="drug"><a href="/braclets.php">
 
-                        <img src="img/браслет украшения.jpg">
+                        <img src="img/braclets/akva.jpg">
 
                         <div class="shadow_drug">
                             <h1>Браслеты</h1>

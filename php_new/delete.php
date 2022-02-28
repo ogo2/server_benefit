@@ -4,7 +4,7 @@ if (!$_SESSION['user']){
     $_SESSION['message'] = 'Войдите или зарегестрируйте прежде чем добавлять товар в корзину!';
     header('Location: ../register.php');
 }
-$tovar = $_POST['delete_product'];
+$tovar = $_POST['text'];
 $res = file_get_contents('../basket/basket.json');
 //    print_r($res);
 $name_user = $_SESSION['user']["login"];

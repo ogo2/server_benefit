@@ -34,7 +34,7 @@
             ?>
             <a href="/php_new/log_out.php"><img src="img/img_205956.png"> </a>
             <a href="/profile.php"><img src="img/пользователь.png"></a>
-                    <div class="num_tov">32</div>
+                    <div style="display: none" class="num_tov"></div>
 
                     <?php
                 }else{

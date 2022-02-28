@@ -12,6 +12,7 @@
     $valid_date = $_POST['valid_date'];
     $cvc = $_POST['cvc'];
     $name_card = $_POST['name_card'];
+    echo $but;
 
     function add_adress($user, $country, $city, $street, $region, $post_index, $num_home)
         {

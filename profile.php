@@ -46,15 +46,13 @@
                                         $product_name = $inf_prod[1];
                                         $price = $inf_prod[2];
                                         $photo = $inf_prod[4];
-                                        echo "<div class='bracelets_block'>
+                                        echo "<div id='$product_id' class='bracelets_block'>
                                                 <img src='$photo'>
                                                 <div class='name_bracelets'>
                                                     <p>$product_name</p>
                                                 </div>
                                                 <p>$price$</p>
-                                                <form action='php_new/delete.php' method='post'>
-                                                    <button value='$product_id' name='delete_product'>Убрать из корзины</button>
-                                                </form>
+                                                    <button class='delete_from_basket' id='$product_id'  value='$product_id' name='delete_product'>Убрать из корзины</button>
                                             </div>";
                                     }
                                 }
@@ -71,7 +69,7 @@
                             }
                             ?>
                         </div>
-                        <form style="display: none" action="php_new/adress.php" class="adress_form" method="post">
+                        <div style="display: none" class="adress_hiden">
                             <?php
                                 $connect = mysqli_connect('localhost', 'root', '', 'vpt');
                                 $user_id = $_SESSION['user']['id'];
@@ -110,9 +108,12 @@
                                                 <label><p>Номер дома: $num_home</p></label>
                                             </li>";
                                         }
-                                    echo '<button class="butttt" value="delete_adress" type="submit">
+                                    echo '
+                                            <form action="php_new/adress.php" class="adress_form" method="post">
+
+                                <button class="butttt" name="button_add" value="delete_adress" type="submit">
                                     <a href=""><p>Удалить адрес</p></a>
-                                </button>';
+                                </button></form>';
                                     }
                                     }else{
                                     echo '<ul>
@@ -141,9 +142,11 @@
                                     <label for="num_home"><p>Номер квартиры (необязательно)</p></label>
                                     <input class="form_inp" aria-invalid="false"  type="text" id="num_home" name="num_home" placeholder="23">
                                 </li>
+                                <form  action="php_new/adress.php" class="adress_form" method="post">
                                 <button class="butttt" name="button_add" value="add_adress" type="submit">
                                     <a href=""><p>Добавить адрес</p></a>
                                 </button>
+                        </form>
                                 <p>
 
 
@@ -153,9 +156,7 @@
                             </ul>';
                                 }
                             ?>
-
-
-                        </form>
+                        </div>
                         <form style="display: none" action="php_new/adress.php" class="card_form" method="post">
                             <?php
                                 $connect = mysqli_connect('localhost', 'root', '', 'vpt');
